@@ -1,17 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
+import "./App.css";
+import HelloWorld from "./components/HelloWorld";
 
 const App = () => {
-  const [count, setCount] = useState(0);
-
-  const incrementCount = () => {
-    setCount(count + 1);
-  };
-
   return (
-    <div>
-      <h1>{count}</h1>
-      <input type="button" onClick={incrementCount} />
-    </div>
+    <>
+      <div>
+        <h1 className="bg-dark text-light p-3 head1">Working with CSS</h1>
+        <p className="para">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+          autem eligendi consequatur voluptate optio sint eum beatae
+          voluptatibus? Doloremque, esse.
+        </p>
+      </div>
+
+      <div className="bg-dark text-light p-3 head1">
+        <HelloWorld />
+      </div>
+    </>
   );
 };
 

@@ -2,6 +2,18 @@
   text-align: center;
 }
 
+.head1 {
+  margin: 10px;
+  text-align: center;
+}
+
+.para {
+  margin: 10px;
+  padding: 20px;
+  background-color: rgb(134, 134, 134);
+  color: azure;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
