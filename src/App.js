@@ -1,23 +1,18 @@
 import React from "react";
-import "./App.css";
+import Page1 from "./components/Page1";
+import Page2 from "./components/Page2";
 import HelloWorld from "./components/HelloWorld";
+import NavBar from "./components/NavBar";
+import { BrowserRouter, Route } from "react-router-dom";
 
 const App = () => {
   return (
-    <>
-      <div>
-        <h1 className="bg-dark text-light p-3 head1">Working with CSS</h1>
-        <p className="para">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-          autem eligendi consequatur voluptate optio sint eum beatae
-          voluptatibus? Doloremque, esse.
-        </p>
-      </div>
-
-      <div className="bg-dark text-light p-3 head1">
-        <HelloWorld />
-      </div>
-    </>
+    <BrowserRouter>
+      <Route path="/" component={NavBar} />
+      <Route exact={true} path="/helloworld" component={HelloWorld} />
+      <Route exact={true} path="/page1" component={Page1} />
+      <Route exact={true} path="/page2" component={Page2} />
+    </BrowserRouter>
   );
 };
 
