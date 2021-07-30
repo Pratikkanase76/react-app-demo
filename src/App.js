@@ -1,8 +1,14 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const App = () => {
   const [list, setList] = useState([]);
+
+  useEffect(() => {
+    console.log("use Effect hook");
+    ajaxCall();
+  }, []);
+
   const ajaxCall = async () => {
     const url = "https://jsonplaceholder.typicode.com/posts";
 
