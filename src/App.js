@@ -34,6 +34,11 @@ function MyComponent() {
 
     const newUserList = [newUser, ...userList];
     setUserList(newUserList);
+
+    setUserName("");
+    setUserWork("");
+    setUserEmail("");
+    setUserPassword("");
   };
 
   return (
