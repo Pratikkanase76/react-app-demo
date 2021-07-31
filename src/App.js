@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import axios from "axios";
 
 const App = () => {
   return (
@@ -24,7 +25,7 @@ function MyComponent() {
   const [userPassword, setUserPassword] = useState("");
   const userPasswordHandler = (e) => setUserPassword(e.target.value);
 
-  const addUser = () => {
+  const addUser = async () => {
     const newUser = {
       name: userName,
       work: userWork,
@@ -35,6 +36,11 @@ function MyComponent() {
     const newUserList = [newUser, ...userList];
     setUserList(newUserList);
 
+    //make API call
+    let url = "http:localhost:8000/create-user";
+    await axios.post(url, { ...newUser, id: null });
+
+    //after creation make fields blank/clear
     setUserName("");
     setUserWork("");
     setUserEmail("");
