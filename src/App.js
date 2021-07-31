@@ -25,6 +25,7 @@ function MyComponent() {
   const [userPassword, setUserPassword] = useState("");
   const userPasswordHandler = (e) => setUserPassword(e.target.value);
 
+  //Create new user and post
   const addUser = async () => {
     const newUser = {
       name: userName,
@@ -38,6 +39,7 @@ function MyComponent() {
 
     //make API call
     let url = "http:localhost:8000/create-user";
+    //we are cloning the new user we can send as it is also but we are sendind id null boz at database we incrementing id by default
     await axios.post(url, { ...newUser, id: null });
 
     //after creation make fields blank/clear
@@ -45,6 +47,13 @@ function MyComponent() {
     setUserWork("");
     setUserEmail("");
     setUserPassword("");
+  };
+
+  //get all user dfrom database amke it useeffect so that automatically gets all the data
+  const getAllUser = async () => {
+    let url = "get usl";
+    const responce = await axios.get(url);
+    setUserList(responce.data);
   };
 
   return (
